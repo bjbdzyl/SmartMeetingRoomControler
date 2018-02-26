@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:gravity="center_vertical"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        style="@style/dev_list_head_style"
+        android:text="@string/dev_name" />
+    <TextView
+        style="@style/dev_list_head_style"
+        android:text="@string/dev_mode"/>
+    <TextView
+        style="@style/dev_list_head_style"
+        android:text="@string/dev_ctrl_method"/>
+    <TextView
+        style="@style/dev_list_head_style"
+        android:text="@string/dev_position"/>
+    <TextView
+        style="@style/dev_list_head_style"
+        android:text="@string/dev_port"/>
+    <TextView
+        style="@style/dev_list_head_style"
+        android:text="@string/dev_state"/>
+
+</LinearLayout>

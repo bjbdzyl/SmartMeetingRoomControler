@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_dev_ctrl_method">
+        <item>单一开关</item>
+        <item>三档开关</item>
+        <item>滑动调节</item>
+    </string-array>
+</resources>

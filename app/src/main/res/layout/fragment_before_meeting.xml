@@ -1,0 +1,164 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhangyl.myapplication.BeforeMeetingFramgent"
+    android:orientation="vertical">
+
+    <!--上方标题区-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/room_name_title"
+                android:text="会议室：九州同庆 K4-F3-B109"
+                android:layout_marginRight="25dp"
+                android:background="#349221"/>
+
+            <TextView
+                android:id="@+id/room_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="即将开会"
+                android:layout_marginRight="25dp" />
+
+            <TextView
+                android:id="@+id/room_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用人：李涛" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right">
+            <TextView
+                android:id="@+id/text_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2014-08-09 10:11:12"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/global_cfg"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!--下方内容区-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!--左下按钮、人脸扫描、语音收发区-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/check_in_room"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/check_in_room"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <Button
+                android:id="@+id/cancel_meeting"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel_meeting" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/face_scan_check_in"
+                android:visibility="visible"/>
+
+            <SurfaceView
+                android:id="@+id/face_scan_view"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:visibility="visible"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sound_check_in"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:id="@+id/microphone"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:visibility="visible"
+                android:background="@color/black_overlay"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"/>
+
+        <!--右下内容区-->
+        <LinearLayout
+            android:id="@+id/before_meeting_content_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="60dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/meeting_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主题：关于祥子黄包车修理的指导方案"
+                android:textSize="35dp"/>
+
+            <TextView
+                android:id="@+id/meeting_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="时间：14：00 - 15：00"
+                android:textSize="35dp"/>
+
+            <TextView
+                android:id="@+id/meeting_host"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主持：祥林嫂"
+                android:textSize="35dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

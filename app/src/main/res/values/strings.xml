@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">智会中控</string>
+
+    <string name="next_step">下一步</string>
+    <string name="wifi_ssid">WIFI</string>
+    <string name="wifi_pwd">密码</string>
+    <string name="dummy_content">智会中控</string>
+
+    <string name="title_activity_sys_init">SysInitActivity</string>
+    <string name="ip_name">中控机IP</string>
+    <string name="room_name">会议室名</string>
+    <string name="room_number">房间号</string>
+    <string name="room_size">容纳人数</string>
+    <string name="server_address">会服云域名</string>
+
+    <string name="title_activity_init_dev_list">初始化设备列表</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="add_new">新增</string>
+    <string name="dev_name">设备名称</string>
+    <string name="dev_mode">设备型号</string>
+    <string name="dev_type">设备类型</string>
+    <string name="dev_ctrl_method">控制方法</string>
+    <string name="dev_position">安装位置</string>
+    <string name="dev_port">通信端口</string>
+    <string name="dev_state">设备状态</string>
+
+    <string name="single_color_light">单色开关灯</string>
+    <string name="single_color_random_light">单色调光灯</string>
+    <string name="colors_light">多彩开关灯</string>
+    <string name="colors_random_light">多彩调光灯</string>
+
+    <string name="multi_gear_switch">滑动调节</string>
+    <string name="title_activity_meeting_mode_cfg">MeetingModeCfgActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="check_in_room">签入会议室</string>
+    <string name="cancel_meeting">取消会议</string>
+    <string name="face_scan_check_in">人脸签到</string>
+    <string name="sound_check_in">语音签到</string>
+    <string name="stop_meeting">结束会议</string>
+    <string name="add_meeting_time">加时</string>
+    <string name="room_temprature">温度</string>
+    <string name="global_cfg">系统设置</string>
+
+    <string name="title_activity_sleep_screen">SleepScreen</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="single_switch">普通开关</string>
+    <string name="three_geer_switch">三档开关</string>
+
+</resources>
