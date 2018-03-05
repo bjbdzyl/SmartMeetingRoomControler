@@ -4,7 +4,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zhangyl.myapplication.StepTwoFragment">
+    tools:context="com.example.zhangyl.myapplication.View.StepTwoFragment">
 
     <ListView
         android:id="@+id/dev_list_view"

@@ -48,5 +48,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="single_switch">普通开关</string>
     <string name="three_geer_switch">三档开关</string>
+    <string name="ctrl_bord">控制面板</string>
+    <string name="meeting_running">会议进行中</string>
 
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zhangyl.myapplication.protocal_test">
+    tools:context="com.example.zhangyl.myapplication.Presenter.protocal_test">
 
     <Button
         android:id="@+id/light_on"

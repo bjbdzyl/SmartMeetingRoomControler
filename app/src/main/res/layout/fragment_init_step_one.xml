@@ -4,7 +4,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zhangyl.myapplication.InitStepOneFragment"
+    tools:context="com.example.zhangyl.myapplication.View.InitStepOneFragment"
     tools:layout_editor_absoluteY="25dp">
 
     <TextView
