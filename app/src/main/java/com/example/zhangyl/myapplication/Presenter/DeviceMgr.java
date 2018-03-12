@@ -21,7 +21,7 @@ import retrofit2.http.POST;
 
 /**
  * Created by ZhangYL on 2018/1/26 0026.
- * 负责设备数据库管理。设备开关等遥控。主机socket监听，读写分离。
+ * 负责设备数据库管理，维护设备最后一次开关状态值（用于初始化界面）。设备开关等遥控。主机socket监听，读写分离。
  */
 
 public class DeviceMgr implements AppCallBack {

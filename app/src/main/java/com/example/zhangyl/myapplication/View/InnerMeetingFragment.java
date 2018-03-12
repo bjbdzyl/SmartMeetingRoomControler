@@ -145,7 +145,7 @@ public class InnerMeetingFragment extends Fragment {
             DevCtrlListViewItem listItem = new DevCtrlListViewItem();
             listItem.devInfo = device;
 
-            for (ModeCfgDbItem cfg : ModeCfgMgr.getInstance().mCfgList){
+            for (ModeCfgDbItem cfg : ModeCfgMgr.getInstance().getCfgList()){
                 if (cfg.getMIoPort() == device.getLIoPort()){
                     listItem.modeCfg = cfg;
                     break;
