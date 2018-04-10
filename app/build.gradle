@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'org.greenrobot.greendao'
 android {
-    compileSdkVersion 25
+    compileSdkVersion 24
     buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "com.example.zhangyl.myapplication"
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,6 +17,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    productFlavors {
     }
 }
 
@@ -46,4 +48,6 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     compile files('libs/netty-all-4.1.19.Final.jar')
     compile files('libs/netty-all-4.1.19.Final-sources.jar')
+    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
+    compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 }

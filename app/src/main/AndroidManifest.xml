@@ -2,15 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zhangyl.myapplication">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <application
         android:name=".Presenter.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
@@ -26,10 +26,12 @@
         </activity>
         <activity android:name=".Presenter.protocal_test"></activity>
 
-        <service
-            android:name=".Service.MainService"
-            android:enabled="true"
-            android:exported="true"></service>
+        <service android:name=".Presenter.MQTTService" >
+            <intent-filter>
+                <action android:name="com.example.zhangyl.myapplication.presenter.mqttsrv"/>
+            </intent-filter>
+        </service>
+        <service android:name="org.eclipse.paho.android.service.MqttService"/>
     </application>
 
 </manifest>

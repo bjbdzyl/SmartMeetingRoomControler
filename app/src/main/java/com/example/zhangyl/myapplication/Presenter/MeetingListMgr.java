@@ -89,8 +89,13 @@ public class MeetingListMgr implements AppCallBack {
     @Override
     public void onAppStart() {
         // TODO 异步执行首次下载。启动后续的定时接收服务器推送。
-        downloadMeetingList();
-        startCloudListener();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                downloadMeetingList();
+                startCloudListener();
+            }
+        }).start();
     }
 
     @Override
@@ -113,7 +118,7 @@ public class MeetingListMgr implements AppCallBack {
 
     }
 
-    // todo 接收服务器定时推送的最新会议列表。
+    // todo 接收服务器定时推送的最新会议列表。调整重试间隔和多线程同步方式，避免ANR问题
     public void downloadMeetingList(){
         if (nState != SLEEP){
             Log.i(TAG, "downloadMeetingList: not idle. state " + nState);
@@ -154,11 +159,11 @@ public class MeetingListMgr implements AppCallBack {
                     nState = SLEEP;
                     if (nRetryDlTimes++ <= MAX_RETRY_TIMES){
                         Log.i(TAG, "onResponse: no response for dl meeting list. retry " + nRetryDlTimes);
-                        try {
-                            Thread.sleep(ONE_MIN);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+//                        try {
+//                            Thread.sleep(ONE_MIN);
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
                         downloadMeetingList();
                     }
                     else {
@@ -177,11 +182,11 @@ public class MeetingListMgr implements AppCallBack {
                 else {
                     if (nRetryDlTimes++ <= MAX_RETRY_TIMES){
                         Log.i(TAG, "onResponse: fail get meeting list. retry " + nRetryDlTimes);
-                        try {
-                            Thread.sleep(ONE_MIN);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+//                        try {
+//                            Thread.sleep(ONE_MIN);
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
                         downloadMeetingList();
                     }
                     else {
@@ -198,11 +203,11 @@ public class MeetingListMgr implements AppCallBack {
                 Log.i(TAG, "onFailure: doGetMeetingList faild " + t.getMessage());
                 if (nRetryDlTimes++ <= MAX_RETRY_TIMES){
                     Log.i(TAG, "onResponse: fail get meeting list. retry " + nRetryDlTimes);
-                    try {
-                        Thread.sleep(ONE_MIN);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        Thread.sleep(ONE_MIN);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                     downloadMeetingList();
                 }
                 else {

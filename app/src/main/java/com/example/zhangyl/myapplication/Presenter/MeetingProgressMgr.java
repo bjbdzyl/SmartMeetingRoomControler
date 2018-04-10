@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
@@ -131,6 +132,7 @@ public class MeetingProgressMgr extends BroadcastReceiver implements AppCallBack
     }
 
     private void BroadcastMeetingStart(Meeting meeting) {
+        // todo 查一下，Intent构造的第二参数，可否为普通自定义类，而非继承来的component。这里若能直接用自定义类，那AppStart里是否还需要registerReceiver？
         Intent intent = new Intent(App.getInstance().getContext(), MeetingProgressMgr.class);
         intent.putExtra("name", meeting.getName());
         intent.putExtra("start_time", meeting.getStart_time());
@@ -138,14 +140,18 @@ public class MeetingProgressMgr extends BroadcastReceiver implements AppCallBack
         intent.putExtra("host", meeting.getHost());
         intent.putExtra("title", meeting.getTitle());
         intent.putExtra("alarm_event", MeetingMgrEvent.EVENT_MEETING_START);
-
         App.getInstance().getContext().sendBroadcast(intent);
     }
 
     @Override
     public void onAppStart() {
+        // TODO 注册会议变更推送
         EventBus.getDefault().register(this);
-        App.getInstance().getContext().registerReceiver(this, null);
+        if(App.getInstance().getContext() == null){
+            Log.e(TAG, "onAppStart: meeting process mgr fail to get context for app");
+        }
+        IntentFilter filter = new IntentFilter();
+        App.getInstance().getContext().registerReceiver(this, filter);
         registerNextMeeting();
     }
 

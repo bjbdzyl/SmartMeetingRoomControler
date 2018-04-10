@@ -2,9 +2,8 @@ package com.example.zhangyl.myapplication.Presenter;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
-
-import retrofit2.Retrofit;
 
 /**
  * Created by ZhangYL on 2018/1/22 0022.
@@ -17,32 +16,42 @@ public class App extends Application {
     private final static String TAG = "App";
 
     public static App getInstance(){
-        if (g_app == null) {
-            g_app = new App();
-        }
-
         return g_app;
     }
 
-    private static Context mContext;
+    private Context mContext;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        mContext = getApplicationContext();
+        g_app = this;
+        mContext = g_app.getApplicationContext();
+        if (mContext == null) {
+            Log.e(TAG, "fail to init app context");
+        } else {
+            Log.i(TAG, "onCreate: init context succ");
+        }
 
-        if (!RegisterMgr.get_instance().needRegister()){
-            Log.i(TAG, "onCreate: all ready register this room. start gloable mgr");
-            GlobalMgr.getInstance().onAppStart();
-        }
-        else {
-            Log.i(TAG, "onCreate: neet register. new room");
-        }
+        Log.i(TAG, "onCreate: try to start mqtt service");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Intent srvIntent = new Intent(mContext, MQTTService.class);
+                if(null == startService(srvIntent)){
+                    Log.e(TAG, "onCreate: fail to start mqtt servcice");
+                }
+                if (!RegisterMgr.get_instance().needRegister()){
+                    Log.i(TAG, "onCreate: all ready register this room. start gloable mgr");
+                    GlobalMgr.getInstance().onAppStart();
+                }
+                else {
+                    Log.i(TAG, "onCreate: neet register. new room");
+                }
+            }
+        }).start();
     }
 
     public Context getContext() {
         return mContext;
     }
-
-
 }
