@@ -28,7 +28,6 @@ import butterknife.Unbinder;
  * create an instance of this fragment.
  */
 public class InitStepOneFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -47,7 +46,6 @@ public class InitStepOneFragment extends Fragment {
     Button BTNNEXT;
     Unbinder unbinder;
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -65,7 +63,6 @@ public class InitStepOneFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment InitStepOneFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static InitStepOneFragment newInstance(String param1, String param2) {
         InitStepOneFragment fragment = new InitStepOneFragment();
         Bundle args = new Bundle();
@@ -103,7 +100,6 @@ public class InitStepOneFragment extends Fragment {
         return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
 //    public void onButtonPressed(Uri uri) {
 //        if (mListener != null) {
 //            mListener.onFragmentInteraction(uri);
@@ -179,7 +175,6 @@ public class InitStepOneFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnStepOneFragmentCallBack {
-        // TODO: Update argument type and name
         //void onFragmentInteraction(Uri uri);
         void onStepOneOk();
     }

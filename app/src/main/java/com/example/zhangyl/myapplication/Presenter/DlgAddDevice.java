@@ -44,7 +44,6 @@ public class DlgAddDevice extends DialogFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
         //getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
 

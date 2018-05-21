@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.zhangyl.myapplication.View.ModeCfgListAdapter">
 
-    <!-- TODO: Update blank fragment layout -->
     <ListView
         android:id="@+id/dev_list_view"
         android:layout_width="match_parent"

@@ -67,7 +67,6 @@ public class MeetingModeCfgFragment extends Fragment {
     private List<View> list_sub_frags;
     private String[] titles = {"会前", "会中", "会后"};
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -84,7 +83,6 @@ public class MeetingModeCfgFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment MeetingModeCfgFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static MeetingModeCfgFragment newInstance(String param1, String param2) {
         MeetingModeCfgFragment fragment = new MeetingModeCfgFragment();
         Bundle args = new Bundle();
@@ -154,7 +152,6 @@ public class MeetingModeCfgFragment extends Fragment {
 
     @OnClick(R.id.back_btn)
     public void onBtnBack(){
-        //TODO 返回上一步
         mCallBack.onBackToStepTwo();
     }
 
