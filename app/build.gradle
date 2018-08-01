@@ -20,11 +20,13 @@ android {
     }
     productFlavors {
     }
+	
+	lintOptions {
+		abortOnError false
+	}
 }
 
-lintOptions {
-    abortOnError false
-}
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
